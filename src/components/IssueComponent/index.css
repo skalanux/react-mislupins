@@ -1,5 +1,13 @@
 .IssueComponent{
     cursor: pointer;
+    border: 0;
+    margin: 2px 2px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    width: 2vw !important;
+    height: 2vw !important;
+    border-radius: 50%;
 }
 
 

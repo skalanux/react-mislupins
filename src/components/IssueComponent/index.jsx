@@ -12,7 +12,7 @@ class IssueComponent extends PureComponent {
   };
 
   render(){
-    const cols = 'col m1';
+    const cols = 'z-depth-2 col center';
     return (
       <div className={`IssueComponent-${this.props.status} IssueComponent ${cols}` } onClick={this.props.onIssueClick}>{this.props.number}</div>
     );

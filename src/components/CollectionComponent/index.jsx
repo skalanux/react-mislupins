@@ -14,9 +14,12 @@ const CollectionComponent = (props) => {
   }
   
 )
-return (<div className='rows'> 
+return (<div className='rows' > 
   <h3>Mi colección</h3>
+  {/*<div className='z-depth-2 center' style={{border: '3px solid', overflow: 'auto', backgroundColor: 'black'}}>*/}
+  <div>
     {issues}
+  </div>
   </div>);
 };
 

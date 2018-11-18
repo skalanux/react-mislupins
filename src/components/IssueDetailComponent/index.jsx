@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import cover from '../RandomCoverComponent/covers/205.gif';
 
 const IssueDetailComponent = (props) => {
-return (<div>
-    <div  className="col m12">
-        <img src={cover} />
+return (<div >
+    <div>
+        <img src={cover} className="z-depth-2" />
     </div>
     <div  className="col m12">
         Número: <b>{props.issue.number}</b>
