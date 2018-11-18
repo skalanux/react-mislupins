@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logonuevo.svg';
 import './index.css';
 import RandomCoverComponent from '../components/RandomCoverComponent';
 import CollectionComponent from '../components/CollectionComponent'

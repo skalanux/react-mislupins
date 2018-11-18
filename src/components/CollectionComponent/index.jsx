@@ -15,8 +15,9 @@ const CollectionComponent = (props) => {
   
 )
 return (<div className='rows'> 
-  {issues}
-</div>);
+  <h3>Mi colección</h3>
+    {issues}
+  </div>);
 };
 
 CollectionComponent.propTypes = {
