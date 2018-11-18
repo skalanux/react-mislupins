@@ -1,0 +1,16 @@
+.IssueComponent{
+    cursor: pointer;
+}
+
+
+.IssueComponent-missing{
+    background-color: #d32f2f;
+}
+
+.IssueComponent-existent{
+    background-color: #388e3c;
+}
+
+.IssueComponent-duplicated{
+    background-color: #fbc02d;
+}
