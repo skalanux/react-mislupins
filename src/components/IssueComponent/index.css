@@ -1,13 +1,16 @@
 .IssueComponent{
     cursor: pointer;
     border: 0;
-    margin: 2px 2px;
+    margin: 3px 3px;
     color: white;
     text-align: center;
+    font-size: 0.6vw;
     font-weight: bold;
-    width: 2vw !important;
-    height: 2vw !important;
+    width: 1.5vw !important;
+    height: 1.5vw !important;
     border-radius: 50%;
+    float: left;
+    padding: 0.3vw 0.1vw;
 }
 
 
