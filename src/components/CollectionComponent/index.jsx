@@ -10,7 +10,11 @@ const CollectionComponent = (props) => {
         props.onIssueClick(issue);
     };
 
-    return <IssueComponent key={issue.number} onIssueClick={onThisIssueClick} number={issue.number} status={issue.status} />
+    const onThisIssueToggle = () => {
+      props.onIssueToggle(issue);
+  };
+
+    return <IssueComponent key={issue.number} onIssueClick={onThisIssueClick} onIssueToggle={onThisIssueToggle}  number={issue.number} status={issue.status} />
   }
   
 )

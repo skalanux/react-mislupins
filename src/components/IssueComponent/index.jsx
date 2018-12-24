@@ -8,13 +8,21 @@ class IssueComponent extends PureComponent {
     // TODO: stop propagation;
     // Estara bien crear una función para cada issue, lo que equivale a crear 500 funciones cuando
     // podria simplemente pasar un argumento como target? para eso si necesito esta funcion onclick
-    this.props.onIssueClick();
+    evt.stopPropagation();
+
+    // In that case, event.ctrlKey does the trick.
+    if (evt.ctrlKey) {
+         console.debug("Ctrl+click has just happened!");
+         this.props.onIssueToggle();
+    } else {
+      this.props.onIssueClick();
+    }
   };
 
   render(){
     const cols = 'z-depth-2';
     return (
-      <div className={`IssueComponent-${this.props.status} IssueComponent ${cols}` } onClick={this.props.onIssueClick}>{this.props.number}</div>
+      <div className={`IssueComponent-${this.props.status} IssueComponent ${cols}` } onClick={this.onClick}>{this.props.number}</div>
     );
   }
 };

@@ -14,9 +14,13 @@ class App extends Component {
     this.state = {currentIssue: {number: 1, status:'missing', comics: ['lúpin', 'resorte y el profe'], schematics: ['pelota de trapo', 'muñeca']} }
   }
   onIssueClick = (issue) => {
-    console.log(issue);
     // TODO, recien aca hacer el fetch del numero en cuestion (al menos que ya este en memoria o local storage), hacer offline first?
     this.setState({currentIssue: issue});
+  }
+  onIssueToggle = (issue) => {
+    // TODO, recien aca hacer el fetch del numero en cuestion (al menos que ya este en memoria o local storage), hacer offline first?
+    console.log('toggle issue state');
+    //this.setState({currentIssue: issue});
   }
   render() {
     return (
@@ -37,7 +41,7 @@ class App extends Component {
       
         <div className="row">
           <div className="col m6 s12">
-            <CollectionComponent onIssueClick={this.onIssueClick} issues={mockedIssues} colsNumber={10}/>
+            <CollectionComponent onIssueClick={this.onIssueClick} onIssueToggle ={this.onIssueToggle} issues={mockedIssues} colsNumber={10}/>
           </div>
           <div className="col m6 s12">
             <IssueDetailComponent issue={this.state.currentIssue} />
