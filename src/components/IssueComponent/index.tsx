@@ -1,11 +1,13 @@
 import { PureComponent } from 'react'
 import type { MouseEvent } from 'react'
 
+import type { IssueStatus } from '../../features/collection/types'
+
 import './index.css'
 
 interface IssueComponentProps {
   number: number
-  status: string
+  status: IssueStatus
   onIssueClick: () => void
   onIssueToggle: () => void
 }

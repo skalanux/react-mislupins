@@ -1,9 +1,6 @@
-export interface Issue {
-  number: number
-  status: string
-  comics: string[]
-  schematics: string[]
-}
+import type { Issue } from '../features/collection/types'
+
+export type { Issue }
 
 const templateIssues: Array<Omit<Issue, 'number'>> = [
   { status: 'missing', comics: ['lúpin', 'resorte y el profe'], schematics: ['pelota de trapo', 'muñeca'] },
