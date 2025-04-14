@@ -1,4 +1,4 @@
-import type { Issue } from '../../App/mockedIssues'
+import type { Issue } from '../../features/collection/types'
 import cover from '../RandomCoverComponent/covers/205.gif'
 
 interface IssueDetailComponentProps {

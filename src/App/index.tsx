@@ -6,22 +6,21 @@ import './index.css'
 import CollectionComponent from '../components/CollectionComponent'
 import IssueDetailComponent from '../components/IssueDetailComponent'
 import RandomCoverComponent from '../components/RandomCoverComponent'
-import { mockedIssues, type Issue } from './mockedIssues'
+import { SeedCollectionRepository } from '../features/collection/collectionRepository'
+import { buildSeedIssues } from '../features/collection/data/seedIssues'
+import type { Issue } from '../features/collection/types'
+
+const repository = new SeedCollectionRepository(buildSeedIssues())
 
 interface AppState {
   currentIssue: Issue
-  issues: Record<number, Issue>
+  issues: Issue[]
 }
 
 class App extends Component<object, AppState> {
   state: AppState = {
-    currentIssue: {
-      number: 1,
-      status: 'missing',
-      comics: ['lúpin', 'resorte y el profe'],
-      schematics: ['pelota de trapo', 'muñeca'],
-    },
-    issues: mockedIssues,
+    currentIssue: { number: 1, status: 'missing', comics: [], schematics: [] },
+    issues: repository.getCollection(),
   }
 
   onIssueClick = (issue: Issue): void => {

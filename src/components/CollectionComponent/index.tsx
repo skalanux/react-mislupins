@@ -1,16 +1,16 @@
 import type { ReactNode } from 'react'
 
-import type { Issue } from '../../App/mockedIssues'
+import type { Issue } from '../../features/collection/types'
 import IssueComponent from '../IssueComponent'
 
 interface CollectionComponentProps {
-  issues: Record<number, Issue>
+  issues: Issue[]
   onIssueClick: (issue: Issue) => void
   onIssueToggle: (issue: Issue) => void
 }
 
 const CollectionComponent = ({ issues, onIssueClick, onIssueToggle }: CollectionComponentProps) => {
-  const issueNodes: ReactNode[] = Object.values(issues).map((issue) => (
+  const issueNodes: ReactNode[] = issues.map((issue) => (
     <IssueComponent
       key={issue.number}
       number={issue.number}

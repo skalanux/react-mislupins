@@ -1,8 +1,6 @@
-import type { Issue } from '../features/collection/types'
+import type { Issue } from '../types'
 
-export type { Issue }
-
-const templateIssues: Array<Omit<Issue, 'number'>> = [
+const templates: Array<Pick<Issue, 'status' | 'comics' | 'schematics'>> = [
   { status: 'missing', comics: ['lúpin', 'resorte y el profe'], schematics: ['pelota de trapo', 'muñeca'] },
   { status: 'existent', comics: ['lúpin', 'saltapones'], schematics: ['mosquitero', 'radio'] },
   { status: 'missing', comics: ['hercu sansonacho', 'al feñique'], schematics: ['luces audiorítmicas', 'calentador solar'] },
@@ -15,20 +13,11 @@ const templateIssues: Array<Omit<Issue, 'number'>> = [
   { status: 'existent', comics: ['lúpin', 'saltapones'], schematics: ['mosquitero', 'radio'] },
 ]
 
-const mockedIssues: Record<number, Issue> = {}
-let totalCounter = 1
-let templateCounter = 0
-
-do {
-  const template = templateIssues[templateCounter]
-  if (template) {
-    mockedIssues[totalCounter] = { number: totalCounter, ...template }
+export function buildSeedIssues(total = 499): Issue[] {
+  const issues: Issue[] = []
+  for (let number = 1; number <= total; number++) {
+    const template = templates[(number - 1) % templates.length]
+    issues.push({ number, ...template })
   }
-  templateCounter++
-  if (templateCounter === 9) {
-    templateCounter = 0
-  }
-  totalCounter++
-} while (totalCounter < 500)
-
-export { mockedIssues }
+  return issues
+}
