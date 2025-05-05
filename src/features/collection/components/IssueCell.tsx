@@ -1,18 +1,18 @@
 import { PureComponent } from 'react'
 import type { MouseEvent } from 'react'
 
-import type { IssueStatus } from '../../features/collection/types'
+import type { IssueStatus } from '../types'
 
-import './index.css'
+import './IssueCell.css'
 
-interface IssueComponentProps {
+interface IssueCellProps {
   number: number
   status: IssueStatus
   onIssueClick: () => void
   onIssueToggle: () => void
 }
 
-class IssueComponent extends PureComponent<IssueComponentProps> {
+class IssueCell extends PureComponent<IssueCellProps> {
   onClick = (evt: MouseEvent<HTMLDivElement>): void => {
     evt.stopPropagation()
 
@@ -38,4 +38,4 @@ class IssueComponent extends PureComponent<IssueComponentProps> {
   }
 }
 
-export default IssueComponent
+export default IssueCell

@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react'
 
-import type { Issue } from '../../features/collection/types'
-import IssueComponent from '../IssueComponent'
+import type { Issue } from '../types'
+import IssueCell from './IssueCell'
 
-interface CollectionComponentProps {
+interface CollectionGridProps {
   issues: Issue[]
   onIssueClick: (issue: Issue) => void
   onIssueToggle: (issue: Issue) => void
 }
 
-const CollectionComponent = ({ issues, onIssueClick, onIssueToggle }: CollectionComponentProps) => {
+const CollectionGrid = ({ issues, onIssueClick, onIssueToggle }: CollectionGridProps) => {
   const issueNodes: ReactNode[] = issues.map((issue) => (
-    <IssueComponent
+    <IssueCell
       key={issue.number}
       number={issue.number}
       status={issue.status}
@@ -28,4 +28,4 @@ const CollectionComponent = ({ issues, onIssueClick, onIssueToggle }: Collection
   )
 }
 
-export default CollectionComponent
+export default CollectionGrid

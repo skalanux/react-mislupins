@@ -1,14 +1,14 @@
 import { Component } from 'react'
 
-import logo from './logonuevo.svg'
-import './index.css'
-
-import CollectionComponent from '../components/CollectionComponent'
-import IssueDetailComponent from '../components/IssueDetailComponent'
-import RandomCoverComponent from '../components/RandomCoverComponent'
+import logo from '../assets/logonuevo.svg'
 import { SeedCollectionRepository } from '../features/collection/collectionRepository'
+import CollectionGrid from '../features/collection/components/CollectionGrid'
+import IssueDetail from '../features/collection/components/IssueDetail'
+import RandomCover from '../features/collection/components/RandomCover'
 import { buildSeedIssues } from '../features/collection/data/seedIssues'
 import type { Issue } from '../features/collection/types'
+
+import './app.css'
 
 const repository = new SeedCollectionRepository(buildSeedIssues())
 
@@ -41,10 +41,10 @@ class App extends Component<object, AppState> {
             <img src={logo} className="App-logo" alt="mis lupin" />
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <RandomCoverComponent />
+                <RandomCover />
               </li>
               <li>
-                <a href="sass.html">Login</a>
+                <a href="/login">Login</a>
               </li>
             </ul>
           </div>
@@ -52,14 +52,14 @@ class App extends Component<object, AppState> {
         <div className="container" style={{ paddingTop: '2vh' }}>
           <div className="row">
             <div className="col m6 s12">
-              <CollectionComponent
+              <CollectionGrid
                 onIssueClick={this.onIssueClick}
                 onIssueToggle={this.onIssueToggle}
                 issues={this.state.issues}
               />
             </div>
             <div className="col m6 s12">
-              <IssueDetailComponent issue={this.state.currentIssue} />
+              <IssueDetail issue={this.state.currentIssue} />
             </div>
           </div>
         </div>

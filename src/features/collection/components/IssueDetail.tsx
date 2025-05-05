@@ -1,11 +1,11 @@
-import type { Issue } from '../../features/collection/types'
-import cover from '../RandomCoverComponent/covers/205.gif'
+import type { Issue } from '../types'
+import cover from '../../../assets/covers/205.gif'
 
-interface IssueDetailComponentProps {
+interface IssueDetailProps {
   issue: Issue
 }
 
-const IssueDetailComponent = ({ issue }: IssueDetailComponentProps) => (
+const IssueDetail = ({ issue }: IssueDetailProps) => (
   <div>
     <div>
       <img src={cover} className="z-depth-2" alt={`Tapa del número ${issue.number}`} />
@@ -22,4 +22,4 @@ const IssueDetailComponent = ({ issue }: IssueDetailComponentProps) => (
   </div>
 )
 
-export default IssueDetailComponent
+export default IssueDetail
