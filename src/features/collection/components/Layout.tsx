@@ -1,7 +1,6 @@
 import { Outlet } from "react-router";
-
-import logo from "../../../assets/logonuevo.svg";
 import RandomCover from "./RandomCover";
+import logo from "../../../assets/logonuevo.svg";
 
 const Layout = () => (
   <div className="min-h-dvh bg-stone-100">
