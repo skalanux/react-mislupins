@@ -13,6 +13,9 @@ const Layout = () => (
           <RandomCover />
         </div>
         <div className="flex items-center justify-self-end gap-4">
+          <a href="/planitos" className="font-semibold text-stone-700 hover:text-stone-900">
+            Planitos
+          </a>
           <a href="/login" className="font-semibold text-stone-700 hover:text-stone-900">
             Login
           </a>
